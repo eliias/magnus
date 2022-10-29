@@ -1807,6 +1807,7 @@ pub mod exception;
 pub mod fiber;
 mod float;
 pub mod gc;
+pub mod gvl;
 mod integer;
 mod into_value;
 pub mod method;
