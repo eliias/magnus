@@ -1837,7 +1837,7 @@ mod range;
 pub mod rb_sys;
 pub mod scan_args;
 pub mod symbol;
-mod try_convert;
+pub mod try_convert;
 pub mod typed_data;
 pub mod value;
 
