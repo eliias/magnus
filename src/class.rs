@@ -1198,7 +1198,10 @@ impl Ruby {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_array`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_array` instead")
+)]
 #[inline]
 pub fn array() -> RClass {
     get_ruby!().class_array()
@@ -1210,7 +1213,10 @@ pub fn array() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_basic_object`]
 /// for the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_basic_object` instead")
+)]
 #[inline]
 pub fn basic_object() -> RClass {
     get_ruby!().class_basic_object()
@@ -1222,7 +1228,10 @@ pub fn basic_object() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_binding`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_binding` instead")
+)]
 #[inline]
 pub fn binding() -> RClass {
     get_ruby!().class_binding()
@@ -1234,7 +1243,10 @@ pub fn binding() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_class`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_class` instead")
+)]
 #[inline]
 pub fn class() -> RClass {
     get_ruby!().class_class()
@@ -1246,7 +1258,10 @@ pub fn class() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_complex`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_complex` instead")
+)]
 #[inline]
 pub fn complex() -> RClass {
     get_ruby!().class_complex()
@@ -1258,7 +1273,10 @@ pub fn complex() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_dir`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_dir` instead")
+)]
 #[inline]
 pub fn dir() -> RClass {
     get_ruby!().class_dir()
@@ -1270,7 +1288,10 @@ pub fn dir() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_encoding`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_encoding` instead")
+)]
 #[inline]
 pub fn encoding() -> RClass {
     get_ruby!().class_encoding()
@@ -1282,7 +1303,10 @@ pub fn encoding() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_enumerator`]
 /// for the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_enumerator` instead")
+)]
 #[inline]
 pub fn enumerator() -> RClass {
     get_ruby!().class_enumerator()
@@ -1294,7 +1318,10 @@ pub fn enumerator() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_false_class`]
 /// for the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_false_class` instead")
+)]
 #[inline]
 pub fn false_class() -> RClass {
     get_ruby!().class_false_class()
@@ -1306,7 +1333,10 @@ pub fn false_class() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_file`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_file` instead")
+)]
 #[inline]
 pub fn file() -> RClass {
     get_ruby!().class_file()
@@ -1318,7 +1348,10 @@ pub fn file() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_float`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_float` instead")
+)]
 #[inline]
 pub fn float() -> RClass {
     get_ruby!().class_float()
@@ -1330,7 +1363,10 @@ pub fn float() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_hash`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_hash` instead")
+)]
 #[inline]
 pub fn hash() -> RClass {
     get_ruby!().class_hash()
@@ -1342,7 +1378,10 @@ pub fn hash() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_io`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_io` instead")
+)]
 #[inline]
 pub fn io() -> RClass {
     get_ruby!().class_io()
@@ -1354,7 +1393,10 @@ pub fn io() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_integer`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_integer` instead")
+)]
 #[inline]
 pub fn integer() -> RClass {
     get_ruby!().class_integer()
@@ -1366,7 +1408,10 @@ pub fn integer() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_match`]
 /// for the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_match` instead")
+)]
 #[inline]
 pub fn match_class() -> RClass {
     get_ruby!().class_match()
@@ -1378,7 +1423,10 @@ pub fn match_class() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_method`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_method` instead")
+)]
 #[inline]
 pub fn method() -> RClass {
     get_ruby!().class_method()
@@ -1390,7 +1438,10 @@ pub fn method() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_module`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_module` instead")
+)]
 #[inline]
 pub fn module() -> RClass {
     get_ruby!().class_module()
@@ -1402,7 +1453,10 @@ pub fn module() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_name_error_mesg`]
 /// for the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_name_error_mesg` instead")
+)]
 #[inline]
 pub fn name_error_mesg() -> RClass {
     get_ruby!().class_name_error_mesg()
@@ -1414,7 +1468,10 @@ pub fn name_error_mesg() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_nil_class`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_nil_class` instead")
+)]
 #[inline]
 pub fn nil_class() -> RClass {
     get_ruby!().class_nil_class()
@@ -1426,7 +1483,10 @@ pub fn nil_class() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_numeric`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_numeric` instead")
+)]
 #[inline]
 pub fn numeric() -> RClass {
     get_ruby!().class_numeric()
@@ -1438,7 +1498,10 @@ pub fn numeric() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_object`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_object` instead")
+)]
 #[inline]
 pub fn object() -> RClass {
     get_ruby!().class_object()
@@ -1450,7 +1513,10 @@ pub fn object() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_proc`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_proc` instead")
+)]
 #[inline]
 pub fn proc() -> RClass {
     get_ruby!().class_proc()
@@ -1462,7 +1528,10 @@ pub fn proc() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_random`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_random` instead")
+)]
 #[inline]
 pub fn random() -> RClass {
     get_ruby!().class_random()
@@ -1474,7 +1543,10 @@ pub fn random() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_range`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_range` instead")
+)]
 #[inline]
 pub fn range() -> RClass {
     get_ruby!().class_range()
@@ -1486,7 +1558,10 @@ pub fn range() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_rational`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_rational` instead")
+)]
 #[inline]
 pub fn rational() -> RClass {
     get_ruby!().class_rational()
@@ -1498,7 +1573,10 @@ pub fn rational() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_refinement`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_refinement` instead")
+)]
 #[cfg(any(ruby_gte_3_1, docsrs))]
 #[cfg_attr(docsrs, doc(cfg(ruby_gte_3_1)))]
 #[inline]
@@ -1512,7 +1590,10 @@ pub fn refinement() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_regexp`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_regexp` instead")
+)]
 #[inline]
 pub fn regexp() -> RClass {
     get_ruby!().class_regexp()
@@ -1524,7 +1605,10 @@ pub fn regexp() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_stat`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_stat` instead")
+)]
 #[inline]
 pub fn stat() -> RClass {
     get_ruby!().class_stat()
@@ -1536,7 +1620,10 @@ pub fn stat() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_string`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_string` instead")
+)]
 #[inline]
 pub fn string() -> RClass {
     get_ruby!().class_string()
@@ -1548,7 +1635,10 @@ pub fn string() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_struct`]
 /// for the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_struct` instead")
+)]
 #[inline]
 pub fn struct_class() -> RClass {
     get_ruby!().class_struct()
@@ -1560,7 +1650,10 @@ pub fn struct_class() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_symbol`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_symbol` instead")
+)]
 #[inline]
 pub fn symbol() -> RClass {
     get_ruby!().class_symbol()
@@ -1572,7 +1665,10 @@ pub fn symbol() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_thread`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_thread` instead")
+)]
 #[inline]
 pub fn thread() -> RClass {
     get_ruby!().class_thread()
@@ -1584,7 +1680,10 @@ pub fn thread() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_time`] for the
 /// non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_time` instead")
+)]
 #[inline]
 pub fn time() -> RClass {
     get_ruby!().class_time()
@@ -1596,7 +1695,10 @@ pub fn time() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_true_class`] for
 /// the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_true_class` instead")
+)]
 #[inline]
 pub fn true_class() -> RClass {
     get_ruby!().class_true_class()
@@ -1608,7 +1710,10 @@ pub fn true_class() -> RClass {
 ///
 /// Panics if called from a non-Ruby thread. See [`Ruby::class_unbound_method`]
 /// for the non-panicking version.
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::class_unbound_method` instead")
+)]
 #[inline]
 pub fn unbound_method() -> RClass {
     get_ruby!().class_unbound_method()

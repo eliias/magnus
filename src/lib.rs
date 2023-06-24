@@ -2392,7 +2392,10 @@ impl Ruby {
 /// define_class("Example", class::object()).unwrap();
 /// rb_assert!("Example.is_a?(Class)");
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::define_class` instead")
+)]
 #[inline]
 pub fn define_class(name: &str, superclass: RClass) -> Result<RClass, Error> {
     get_ruby!().define_class(name, superclass)
@@ -2415,7 +2418,10 @@ pub fn define_class(name: &str, superclass: RClass) -> Result<RClass, Error> {
 /// rb_assert!("Example.is_a?(Module)");
 /// rb_assert!("!Example.is_a?(Class)");
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::define_module` instead")
+)]
 #[inline]
 pub fn define_module(name: &str) -> Result<RModule, Error> {
     get_ruby!().define_module(name)
@@ -2438,7 +2444,10 @@ pub fn define_module(name: &str) -> Result<RModule, Error> {
 /// rb_assert!("ExampleError.is_a?(Class)");
 /// rb_assert!("ExampleError < Exception");
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::define_error` instead")
+)]
 #[inline]
 pub fn define_error(name: &str, superclass: ExceptionClass) -> Result<ExceptionClass, Error> {
     get_ruby!().define_error(name, superclass)
@@ -2466,7 +2475,10 @@ pub fn define_error(name: &str, superclass: ExceptionClass) -> Result<ExceptionC
 /// }
 /// rb_assert!(r#"$example == "answer""#);
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::define_variable` instead")
+)]
 #[inline]
 pub fn define_variable<T>(name: &str, initial: T) -> Result<*mut Value, Error>
 where
@@ -2491,7 +2503,10 @@ where
 /// define_global_const("EXAMPLE", 42).unwrap();
 /// rb_assert!("EXAMPLE == 42");
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::define_global_const` instead")
+)]
 #[inline]
 pub fn define_global_const<T>(name: &str, value: T) -> Result<(), Error>
 where
@@ -2520,7 +2535,10 @@ where
 /// define_global_function("greet", function!(greet, 1));
 /// rb_assert!(r#"greet("world") == "Hello, world!""#);
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::define_global_function` instead")
+)]
 #[inline]
 pub fn define_global_function<M>(name: &str, func: M)
 where
@@ -2556,7 +2574,10 @@ where
 ///     Some(String::from("a"))
 /// );
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::backref_get` instead")
+)]
 #[inline]
 pub fn backref_get() -> Option<RMatch> {
     get_ruby!().backref_get()
@@ -2586,7 +2607,10 @@ pub fn backref_get() -> Option<RMatch> {
 ///
 /// rb_assert!("example");
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::current_receiver` instead")
+)]
 #[inline]
 pub fn current_receiver<T>() -> Result<T, Error>
 where
@@ -2633,7 +2657,10 @@ where
 ///
 /// rb_assert!(r#"B.new.example == "Hello from A, and hello from B""#)
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::call_super` instead")
+)]
 #[inline]
 pub fn call_super<A, T>(args: A) -> Result<T, Error>
 where
@@ -2658,7 +2685,10 @@ where
 ///
 /// assert!(require("net/http").unwrap());
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::require` instead")
+)]
 #[cfg(ruby_gte_2_7)]
 #[inline]
 pub fn require<T>(feature: T) -> Result<bool, Error>
@@ -2683,7 +2713,10 @@ where
 ///
 /// assert!(require("net/http").unwrap());
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::require` instead")
+)]
 #[cfg(ruby_lt_2_7)]
 #[inline]
 pub fn require(feature: &str) -> Result<bool, Error> {
@@ -2710,7 +2743,10 @@ pub fn require(feature: &str) -> Result<bool, Error> {
 /// # let _cleanup = unsafe { magnus::embed::init() };
 /// assert_eq!(magnus::eval::<i64>("1 + 2").unwrap(), 3);
 /// ```
-#[cfg(feature = "friendly-api")]
+#[cfg_attr(
+    not(feature = "friendly-api"),
+    deprecated(note = "please use `Ruby::eval` instead")
+)]
 #[inline]
 pub fn eval<T>(s: &str) -> Result<T, Error>
 where
