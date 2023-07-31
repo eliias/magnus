@@ -2395,7 +2395,7 @@ impl Ruby {
 /// rb_assert!("Example.is_a?(Class)");
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::define_class` instead")
 )]
 #[inline]
@@ -2421,7 +2421,7 @@ pub fn define_class(name: &str, superclass: RClass) -> Result<RClass, Error> {
 /// rb_assert!("!Example.is_a?(Class)");
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::define_module` instead")
 )]
 #[inline]
@@ -2447,7 +2447,7 @@ pub fn define_module(name: &str) -> Result<RModule, Error> {
 /// rb_assert!("ExampleError < Exception");
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::define_error` instead")
 )]
 #[inline]
@@ -2478,7 +2478,7 @@ pub fn define_error(name: &str, superclass: ExceptionClass) -> Result<ExceptionC
 /// rb_assert!(r#"$example == "answer""#);
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::define_variable` instead")
 )]
 #[inline]
@@ -2506,7 +2506,7 @@ where
 /// rb_assert!("EXAMPLE == 42");
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::define_global_const` instead")
 )]
 #[inline]
@@ -2538,7 +2538,7 @@ where
 /// rb_assert!(r#"greet("world") == "Hello, world!""#);
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::define_global_function` instead")
 )]
 #[inline]
@@ -2577,7 +2577,7 @@ where
 /// );
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::backref_get` instead")
 )]
 #[inline]
@@ -2610,7 +2610,7 @@ pub fn backref_get() -> Option<RMatch> {
 /// rb_assert!("example");
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::current_receiver` instead")
 )]
 #[inline]
@@ -2660,7 +2660,7 @@ where
 /// rb_assert!(r#"B.new.example == "Hello from A, and hello from B""#)
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::call_super` instead")
 )]
 #[inline]
@@ -2688,7 +2688,7 @@ where
 /// assert!(require("net/http").unwrap());
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::require` instead")
 )]
 #[cfg(ruby_gte_2_7)]
@@ -2716,7 +2716,7 @@ where
 /// assert!(require("net/http").unwrap());
 /// ```
 #[cfg_attr(
-    not(feature = "friendly-api"),
+    not(feature = "old-api"),
     deprecated(note = "please use `Ruby::require` instead")
 )]
 #[cfg(ruby_lt_2_7)]
