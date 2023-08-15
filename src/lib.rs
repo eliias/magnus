@@ -1816,7 +1816,7 @@ pub mod prelude {
         value::ReprValue as _,
     };
 }
-mod r_array;
+pub mod r_array;
 mod r_bignum;
 mod r_complex;
 mod r_file;
